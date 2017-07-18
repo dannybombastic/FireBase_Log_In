@@ -1,0 +1,40 @@
+<div >
+
+
+
+    <form #formUserLogin="ngForm" (ngSubmit)="submitForm()" method="POST" role="form">
+        <legend>Form Firebase</legend>
+        <label for="">Nombre
+                 <span *ngIf="!nombre.valid && nombre.touched" class="label-info"> El nombre es obligatorio </span>
+        </label>
+        <input type="text" class="form-control" #nombre="ngModel" name="nombre" [(ngModel)]="user.name" placeholder="Nombre del producto"
+            required>
+        <br>
+        <label for="">@-Email
+                <span *ngIf="!email.valid && email.touched" class="label-info"> EL email es obligatorio ó esta mal formado </span>
+        </label>
+        <input #email="ngModel" type="email" class="form-control" name="email" [(ngModel)]="user.email" placeholder="me@example.com"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/>
+        <br>
+        <label for="">Password
+            <span *ngIf="!pass.valid && pass.touched" class="label-info"> el pass no es correcto </span>
+        </label>
+        <input type="password" class="form-control" #pass="ngModel" name="pass" [(ngModel)]="user.pass" placeholder="Password de usuario"
+            required pattern="[a-z0-9._%+-]+" required>
+        <br>
+        <label for="">Confirmar Password
+            <span *ngIf="user.pass != bind_pass" class="label-info"> el pass no es correcto </span>
+        </label>
+        <input type="password" class="form-control" #precio="ngModel" name="pass2" [(ngModel)]="bind_pass" placeholder="Repita el password"
+            required pattern="[a-z0-9._%+-]+" required>
+
+
+        <br>
+        <label for="">Imagen</label>
+        <input id="file" type="file" class="form-control" name="file" placeholder="Imagen del producto" (change)="upload()">
+        <br>
+
+
+        <button type="submit" class="btn btn-success" [disabled]="!formUserLogin.form.valid" class="btn btn-primary">Submit</button>
+    </form>
+</div>

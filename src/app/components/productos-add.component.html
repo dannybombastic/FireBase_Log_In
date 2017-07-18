@@ -1,0 +1,41 @@
+
+<h3>----( {{ titulo }} )---</h3>
+<hr>
+
+
+<form #formProductos="ngForm" (ngSubmit)="submitForm()" method="POST" role="form" class="col-lg-10 col-lg-offset-1" id="productos">
+    <legend>Agregagando productos</legend>
+
+
+
+    <label for="">Nombre
+                 <span *ngIf="!nombre.valid && nombre.touched" class="label-info"> El nombre es obligatorio </span>
+        </label>
+    <input type="text" class="form-control" #nombre="ngModel" name="nombre" [(ngModel)]="articulo.nombre" placeholder="Nombre del producto"
+        required>
+
+    <label for="">Descriptcion
+                <span *ngIf="!descriptcion.valid && descriptcion.touched" class="label-info"> La descriptcion es obligatorio </span>
+        </label>
+    <textarea #descriptcion="ngModel" class="form-control" name="descriptcion" [(ngModel)]="articulo.descriptcion" placeholder="Descriptcion del producto"
+        required></textarea>
+
+    <label for="">Precio
+            <span *ngIf="!precio.valid && precio.touched" class="label-info"> el precio no es correcto </span>
+        </label>
+    <input type="text" class="form-control" #precio="ngModel" name="precio" [(ngModel)]="articulo.precio" placeholder="Precio del producto"
+        required pattern="[0-9]+" required>
+
+
+
+    <label for="">Imagen</label>
+    <input type="file" class="form-control" name="file" placeholder="Imagen del producto" (change)="fileChangeEvent($event)">
+
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!formProductos.form.valid" value="{{ titulo }}">Submit</button>
+    <div *ngIf="is_edit">
+        <img src="http://vonoku.esy.es/uploads/{{articulo.imagen}}" class="articulo_imagen" width="160" height="160" />
+
+    </div>
+</form>

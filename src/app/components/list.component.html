@@ -1,0 +1,46 @@
+
+
+
+<h3>{{ titulo }}</h3>
+<hr>
+
+<div *ngIf="!articulos">
+    Cargando productos...
+</div>
+
+<div *ngIf="articulos">
+    <div class="row col-lg-10 col-lg-offset-1">
+        <div class="col-lg-3" *ngFor="let pro of articulos">
+            <div class="thumbnail">
+                <div *ngIf="pro.imagen" class="imagen_container"  (click)="toggleThings()">
+                    <img src="http://vonoku.esy.es/uploads/{{pro.imagen}}" class="articulo_imagen" />
+                </div>
+                <div *ngIf="!pro.imagen">
+                    <div class="imagen_fill">
+
+                    </div>
+
+
+                </div>
+                <div class="caption" >
+                    <h3>{{pro.nombre}} )</h3>
+                    <p>{{pro.id}}</p>
+                <div class="botones" *ngIf="confirmado != pro.id">
+                        <a [routerLink]="['/articulo-detail',pro.id]" class="btn btn-md btn-primary">ver</a>
+                        <a [routerLink]="['/producto-edit',pro.id]" class="btn btn-md btn-warning">editar</a>
+                        <a (click)="borrarComfirmar(pro.id)" class="btn btn-md btn-danger">borrar</a>
+                    </div>
+                    <div class="seguro" *ngIf="confirmado == pro.id">
+                       
+                        <a (click)="onDeleteproducto(pro.id);" class="btn btn-md btn-danger">Quiero eliminar</a>
+                        <a (click)="borrarCancelar();" class="btn btn-md btn-warning">No</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

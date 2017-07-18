@@ -1,0 +1,18 @@
+<h1>Detalle del articulo</h1>
+
+<hr>
+<div *ngIf="!articulo">
+    <h1>Cargando articulo</h1>
+</div>
+<div *ngIf="articulo">
+    <div class="col-lg-3" *ngIf="articulo.imagen">
+    <img src="http://vonoku.esy.es/uploads/{{articulo.imagen}}" class="articulo_imagen" />
+
+    </div>
+<div class="col-lg-9">
+    <h3>{{ articulo.nombre }}</h3>
+    <p><strong>{{ articulo.precio}} €</strong></p>
+    <p>{{ articulo.descriptcion }}</p>
+</div>
+
+</div>

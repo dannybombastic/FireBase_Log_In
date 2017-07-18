@@ -1,0 +1,58 @@
+<div class="row" id="header">
+
+  <nav class="navbar-default  navbar-offset-1">
+    <div class="col-lg-4">
+
+      <div *ngIf="imagen" class="col-lg-2 thumbnail " id="pic_profile">
+        <img src="http://vonoku.esy.es/uploads/{{ imagen }}" class="rounded-0"  width="60" height="60" />
+      </div>
+       
+      <div id="titulo">
+      
+        <title-name  [title]="_name"></title-name>
+      </div>
+    </div>
+
+
+    <div class="">
+      <ul id="lista" class="nav navbar-nav navbar">
+        <li class="hidden">
+          <a href="#page-top"></a>
+        </li>
+        <li>
+          <a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a>
+        </li>
+        <li>
+          <a [routerLink]="['/productos-list']" [routerLinkActive]="['activado']">productos</a>
+
+        </li>
+        <li>
+          <a [routerLink]="['/productos-add']" [routerLinkActive]="['activado']">Crear producto</a>
+
+        </li>
+       
+        <li>
+          <a [routerLink]="['/nav-res']" [routerLinkActive]="['activado']">Contact</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#services">Services</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#about">About</a>
+        </li>
+         <li>
+          <a [routerLink]="['/login-component']" [routerLinkActive]="['activado']">Register as user</a>
+        </li>
+          <li>
+          <a class="page-scroll"  [routerLink]="['/log-user']" [routerLinkActive]="['activado']"  >( Log - In )</a>
+        </li>
+          <li>
+          <a (click)="logOut()" class="page-scroll"   [routerLinkActive]="['activado']">( Log Out )</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,112 @@
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: white;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: white;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+.login h1 {
+   text-align: center;
+  color: white;
+  margin-bottom: 70px;
+}
+
+.login label:hover {
+  transform: rotate(720deg) scale(2, 2);
+  transition-duration: 1s;
+}
+
+.login input {
+  color: white;
+  border: none;
+  outline: none;
+  background: #1c87c1;
+}
+
+.login {
+  align-content: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.imagen {
+  display: inline-block;
+  margin: 0 auto; 
+  margin-bottom: 1rem;
+}
+
+
+.imagen:hover {
+  transform: rotate(360deg) scale(2, 2);
+  transition-duration: 2s;
+}
+
+.login label {
+  color: white;
+}
+
+#fondo_login {
+  background: #44abe5;
+}
+
+div {
+  animation-name: bounce;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes diagonal-right {
+  from {
+    right: 50px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes wobble {
+  0% {
+    left: 100px;
+  }
+  40% {
+    left: 150px;
+  }
+  60% {
+    left: 75px;
+  }
+  100% {
+    left: 100px;
+  }
+}
+
+@keyframes bounce {
+  from {
+    left: 500px;
+    top: 200px;
+  }
+  to {
+    left: 0;
+    top: 0;
+  }
+}

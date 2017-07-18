@@ -1,0 +1,54 @@
+<div class="row" id="parrafo">
+    <div class="alert alert-danger" role="alert">
+        <strong class="alert-link">Vrebe ejemplo de entrada de usuarios</strong>
+    </div>
+    <hr>
+    <p>Utilizando ng-template para disponer la pantalla de login de usuarios {{ login }} contenido dinamico </p>
+
+</div>
+<div  id="fondo_login">
+<div class="container-fluid">
+
+
+    <div *ngIf="template; then ownuser else fire;">
+
+    </div>
+
+
+
+   
+</div>
+<div  [style.background]="'transparent'" [style.text-align]="'center'" ><button class="btn btn-primary btn-lg" (click)="templateState()">Ng-template !! angular 4</button></div>
+</div>
+
+    <ng-template #fire>
+        <firebase-log></firebase-log>
+    </ng-template>
+
+    <ng-template #ownuser>
+        <div class="col-lg-4 col-md-3 col-sm-3 login">
+
+            <form #formUserLogin="ngForm" (ngSubmit)="submitForm()" method="POST" role="form">
+                <div [style.text-align]="'center'" class="row"><img class="imagen rounded-0" src="../../../assets/profile.svg" width="50%" /></div>
+                <h1 *ngIf="user.email;" class="clo-lg-2">-----( {{ user.email }} )-----</h1>
+                <h1 *ngIf="!user.email;" class="clo-lg-2">-----( @ )-----</h1>
+                <label for="">@-Email
+                <span *ngIf="!email.valid && email.touched" class="label-info"> EL email es obligatorio ó esta mal formado </span>
+        </label>
+                <input #email="ngModel" type="email" class="form-control" name="email" [(ngModel)]="user.email" placeholder="me@example.com"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/>
+                <br>
+                <label for="">Password
+            <span *ngIf="!pass.valid && pass.touched" class="label-info"> el pass no es correcto </span>
+        </label>
+                <input type="password" class="form-control" #pass="ngModel" name="pass" [(ngModel)]="user.pass" placeholder="Password de usuario"
+                    required pattern="[a-z0-9._%+-]+" required>
+                <br>
+
+                <button type="submit" [disabled]="!formUserLogin.form.valid" class="btn btn-primary btn-lg"> Submit </button>
+                 
+            </form>
+
+        </div>
+    </ng-template>
+

@@ -1,0 +1,154 @@
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: red;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: red;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: red;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: red;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: red;
+}
+
+.login h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 70px;
+}
+
+.login label:hover {
+  transform: rotate(720deg) scale(2, 2);
+  transition-duration: 1s;
+}
+
+.login input {
+  color: red;
+  border: none;
+  outline: none;
+  background: #f8f8f8;
+}
+
+.login {
+ align-content: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.imagen {
+  display: inline-block;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.imagen:hover {
+  transform: rotate(360deg) scale(2, 2);
+  transition-duration: 2s;
+}
+
+.login label {
+  color: white;
+}
+
+#fondo_login {
+  background: url('C:/wamp64/www/porfolio/src/assets/mar.png') no-repeat fixed center;
+  padding: 0px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+div {
+  animation-name: diagonal-slide;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+#parrafo {
+  box-shadow: 1em 1em 2em black;
+  padding: 1rem;
+  width: 25em;
+  height: 10em;
+  border-radius: 6px;
+  background: #f8f8f8;
+  float: left;
+  display: block;
+  margin-top: 20rem;
+ margin-left: 2em;
+ align-content: center;
+  text-align: center;
+  font: bold;
+  font-size: 17px;
+  border-bottom: 2px solid gray;
+}
+
+#parrafo p {
+  font-style: oblique;
+}
+
+@keyframes diagonal-slide {
+  from {
+    left: 500px;
+    top: 200px;
+  }
+  to {
+    left: 0;
+    top: 0;
+  }
+}
+
+@keyframes wobble {
+  0% {
+    left: 100px;
+  }
+  40% {
+    left: 150px;
+  }
+  60% {
+    left: 75px;
+  }
+  100% {
+    left: 100px;
+  }
+}
+
+@keyframes bounce {
+  from {
+    top: 0px;
+    animation-timing-function: ease-out;
+  }
+  25% {
+    top: 100px;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    top: 50px;
+    animation-timing-function: ease-out;
+  }
+  75% {
+    top: 25px;
+    animation-timing-function: ease-in;
+  }
+  to {
+    top: 0px;
+    animation-timing-function: ease-in-out;
+  }
+}
